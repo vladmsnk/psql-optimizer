@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package api.optimizer.v1;
+
+option go_package = "pkg/pb";
+
+// OptimizerAPI — предоставляет API для управления СУБД PostgreSQL
+service OptimizerAPI {
+  rpc ListIndexesStat(ListIndexesStatRequest) returns (ListIndexesStatResponse);
+}
+
+message ListIndexesStatRequest {
+
+}
+
+message ListIndexesStatResponse {
+
+}
