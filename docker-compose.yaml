@@ -1,7 +1,5 @@
 services:
-  db:
-    networks:
-      - shared_network
+  postgres:
     image: postgres:latest
     container_name: "postgresdb"
     environment:
@@ -11,7 +9,7 @@ services:
     ports:
       - "5432:5432"
     volumes:
-      - ./pgdata:/var/lib/postgresql/data/pgdata
+      - ./pgdata:/var/lib/postgresql/data
 volumes:
   pgdata:
     driver: local

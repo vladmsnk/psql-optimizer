@@ -9,10 +9,16 @@ service OptimizerAPI {
   rpc ListIndexesStat(ListIndexesStatRequest) returns (ListIndexesStatResponse);
 }
 
-message ListIndexesStatRequest {
-
-}
+message ListIndexesStatRequest {}
 
 message ListIndexesStatResponse {
+  message IndexStat {
+    string table_name = 1;
+    string index_name = 2;
+    float  index_scans = 3;
+    float tuples_read = 4;
+    float tuples_fetched = 5;
+  }
 
+  repeated IndexStat indexes_stat = 1;
 }
